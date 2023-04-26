@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Example</title>
+</head>
+<body>
+    <a href="#" id="openViewButton">Open View</a>
+    <script>
+        document.getElementById('openViewButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default click behavior
+            var parameterValue = 'example'; // Replace this with the actual value you want to pass
+            window.location.href = 'yourapp://openview?parameter=' + encodeURIComponent(parameterValue);
+        });
+    </script>
+</body>
+</html>
