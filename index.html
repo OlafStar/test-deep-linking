@@ -6,14 +6,24 @@
     <title>Button Example</title>
 </head>
 <body>
+    <div id="webViewMessage"></div>
     <a href="#" id="openViewButton">Open View</a>
-    <p id="messageContainer"></p> <!-- Add this line -->
     <script>
+        // Add this function to display the message
+        function updateWebViewMessage() {
+            var webViewMessageElement = document.getElementById('webViewMessage');
+            if (window.usingWebView) {
+                webViewMessageElement.textContent = 'We are using a WebView.';
+            } else {
+                webViewMessageElement.textContent = 'We are not using a WebView.';
+            }
+        }
+        // Call the function on load
+        updateWebViewMessage();
         document.getElementById('openViewButton').addEventListener('click', function (event) {
             event.preventDefault();
             var parameterValue = 'example';
             window.location.href = 'yourapp://openview?parameter=' + encodeURIComponent(parameterValue);
         });
     </script>
-</body>
-</html>
+</body
