@@ -9,7 +9,6 @@
     <div id="webViewMessage"></div>
     <a href="#" id="openViewButton">Open View</a>
     <script>
-        // Add this function to display the message
         function updateWebViewMessage() {
             var webViewMessageElement = document.getElementById('webViewMessage');
             if (window.usingWebView) {
@@ -18,12 +17,17 @@
                 webViewMessageElement.textContent = 'We are not using a WebView.';
             }
         }
-        // Call the function on load
-        updateWebViewMessage();
+        // Do not call updateWebViewMessage() here, it will be called from webView(_:didFinish:)
         document.getElementById('openViewButton').addEventListener('click', function (event) {
             event.preventDefault();
             var parameterValue = 'example';
             window.location.href = 'yourapp://openview?parameter=' + encodeURIComponent(parameterValue);
         });
     </script>
-</body
+</body>
+</html>
+
+
+
+
+
