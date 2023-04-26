@@ -7,10 +7,11 @@
 </head>
 <body>
     <a href="#" id="openViewButton">Open View</a>
+    <p id="messageContainer"></p> <!-- Add this line -->
     <script>
         document.getElementById('openViewButton').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent the default click behavior
-            var parameterValue = 'example'; // Replace this with the actual value you want to pass
+            event.preventDefault();
+            var parameterValue = 'example';
             window.location.href = 'yourapp://openview?parameter=' + encodeURIComponent(parameterValue);
         });
     </script>
